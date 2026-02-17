@@ -29,4 +29,4 @@ include("common")
 include("forge")
 include("fabric")
 
-rootProject.name = "vs-template-mod"
+rootProject.name = "vs_template"

@@ -6,13 +6,13 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 import net.minecraftforge.fml.loading.FMLEnvironment
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import net.minecraftforge.registries.RegistryObject
 import org.valkyrienskies.vs_template.VSTemplateMod
 import org.valkyrienskies.vs_template.forge.client.VSTemplateModForgeClient
+import thedarkcolour.kotlinforforge.KotlinModLoadingContext
 
 @Mod(VSTemplateMod.MOD_ID)
 class VSTemplateModForge {
@@ -28,7 +28,7 @@ class VSTemplateModForge {
     // end of RegistryObjects
 
     init {
-        val modEventBus = FMLJavaModLoadingContext.get().modEventBus
+        val modEventBus = KotlinModLoadingContext.get().getKEventBus()
         // Submit our event bus to let Architectury API register our content on the right time.
         EventBuses.registerModEventBus(VSTemplateMod.MOD_ID, modEventBus)
 
